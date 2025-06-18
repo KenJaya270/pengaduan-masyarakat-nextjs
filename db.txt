@@ -1,0 +1,2 @@
+dbname: pengaduan-masyarakat
+password: 0gSs5SsYog2fXz7R
