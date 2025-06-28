@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
     const path = ["/auth/login", "/auth/register", "/auth/forgot-password", "/404", "/500", "/"];
     return (
         <AppShell>
-            <div className={`${path.includes(router.pathname) ? `bg-blue-700` : `bg-white`} min-h-screen`}>
+            <div className={`${path.includes(router.pathname) ? `bg-blue-700` : ``} min-h-screen`}>
                 <Component {...pageProps} />
             </div>
         </AppShell>

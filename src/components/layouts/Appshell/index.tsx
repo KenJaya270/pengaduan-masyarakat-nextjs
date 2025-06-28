@@ -14,8 +14,6 @@ export default function AppShell(props: AppshellProps) {
     const {children} = props;
     const router = useRouter();
 
-    console.log(router);
-
     const renderNavbar = !disableNavbar.includes(router.pathname);
 
     return (
@@ -24,7 +22,8 @@ export default function AppShell(props: AppshellProps) {
 
             {renderNavbar && <NavbarPage/>}
 
-            {children}
+                {children}
+
 
         </main>
 
