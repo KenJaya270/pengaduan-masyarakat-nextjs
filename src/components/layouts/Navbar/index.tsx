@@ -1,6 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
+
+import { useRouter } from 'next/router';
 export default function NavbarPage(){
+
+    const router = useRouter();
+    const handleLogout = () => {
+
+        
+        localStorage.removeItem('user');
+        router.push('/auth/login');
+        return true;
+    }
 
     return (
 
@@ -11,9 +22,7 @@ export default function NavbarPage(){
                     <span className="ml-2 text-xl font-bold">Pengaduan Masyarakat</span>
                 </Link>
             </div>
-            <ul className='flex items-center space-x-4 px-4 py-2'>
-                <li className='rounded-full bg-red-700 text-white px-4 py-2 hover:cursor-pointer hover:bg-red-800 transition'><Link href="/logout">Logout</Link></li>
-            </ul>
+            <button type="button" onClick={handleLogout} className='rounded-full bg-red-700 text-white px-4 py-2 hover:cursor-pointer hover:bg-red-800 transition'>Logout</button>
         </nav>
     )
 }

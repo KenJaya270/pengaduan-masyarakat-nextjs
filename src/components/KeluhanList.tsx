@@ -34,11 +34,11 @@ export default function KeluhanList({
                         {complaint.judul}
                     </Link>
                     <div className="text-sm text-gray-600 mb-2">
-                        <span className="text-gray-500">{   }</span> —
+                        <span className="text-gray-500">{new Date(complaint.created_at).toLocaleDateString('id')}</span> —
                         <span className="ml-2">
                             Status: <span className={
-                                complaint.status === 'Pending' ? 'text-red-500' : 
-                                complaint.status === 'On Progress' ? 'text-yellow-500' : 
+                                complaint.status === 'Pending' || complaint.status === 'pending' ? 'text-red-500' : 
+                                complaint.status === 'On Progress' || complaint.status === 'on progress' ? 'text-yellow-500' : 
                                 'text-green-500'
                             }>
                                 {complaint.status}

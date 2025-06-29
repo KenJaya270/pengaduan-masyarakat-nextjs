@@ -1,5 +1,6 @@
 export default interface User{
 
+    id: number;
     nama_lengkap: string;
     email: string;
     password: string;

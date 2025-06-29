@@ -43,8 +43,18 @@ export default function LoginPage(){
         setLoading(false);
 
         setTimeout(() => {
-            router.push("/user")
-        }, 2000)
+
+            if(data.role === "admin"){
+
+                router.push("/admin")
+
+            }else{
+
+                router.push("/user")
+                
+            }
+
+        }, 1000)
     }
 
     return (
